@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <title>LƯU TRỮ TẠM THỜI - KACE</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <style>
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{
+      font-family: Consolas, "Courier New", monospace;
+      min-height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:radial-gradient(circle at top,#1f2937 0,#020617 55%,#000 100%);
+      color:#e5e7eb;
+      overflow:hidden;
+      position:relative;
+    }
+
+    /* Nền hiệu ứng hacker */
+    body::before{
+      content:"0100110 1011001 0010110 1100101 0011010 0101011 1010010 0101101 1100100 ";
+      position:fixed;
+      inset:-40px;
+      font-size:14px;
+      color:#22c55e;
+      opacity:.12;
+      white-space:pre-wrap;
+      animation:hacker 13s linear infinite;
+    }
+    @keyframes hacker{
+      0%{transform:translateY(-100%);}
+      100%{transform:translateY(100%);}
+    }
+
+    /* Card chính */
+    .card{
+      position:relative;
+      z-index:1;
+      background:rgba(15,23,42,.9);
+      padding:26px 30px;
+      border-radius:20px;
+      max-width:550px;
+      width:100%;
+      text-align:center;
+      border:1px solid rgba(148,163,184,.35);
+      box-shadow:0 25px 55px rgba(0,0,0,.6);
+      backdrop-filter:blur(14px);
+      opacity:0;
+      transform:translateY(25px);
+      animation:cardIn .9s ease-out forwards .4s;
+    }
+    @keyframes cardIn{
+      to{opacity:1;transform:translateY(0);}
+    }
+
+    /* Logo */
+    .logo{
+      font-size:2.2rem;
+      font-weight:900;
+      letter-spacing:2px;
+      color:#38bdf8;
+      text-shadow:0 0 12px #38bdf8;
+      margin-bottom:12px;
+      animation:glow 4s ease-in-out infinite;
+      font-family: "Segoe UI", sans-serif;
+    }
+    @keyframes glow{
+      0%,100%{text-shadow:0 0 12px #38bdf8;}
+      50%{text-shadow:0 0 22px #0ea5e9;}
+    }
+
+    /* Gõ chữ hacker */
+    #typewriter{
+      font-size:0.92rem;
+      color:#a5f3fc;
+      white-space:pre-wrap;
+      min-height:45px;
+      margin-bottom:18px;
+    }
+    .cursor{
+      display:inline-block;
+      width:8px;
+      height:18px;
+      background:#a5f3fc;
+      margin-left:4px;
+      animation:blink .8s infinite;
+    }
+    @keyframes blink{
+      0%,50%{opacity:1;}
+      51%,100%{opacity:0;}
+    }
+
+    .subtitle{
+      font-size:0.87rem;
+      color:#cbd5e1;
+      margin-bottom:18px;
+    }
+
+    .buttons{
+      display:flex;
+      flex-direction:column;
+      gap:14px;
+      text-align:left;
+    }
+
+    .file-item{
+      padding:13px 14px;
+      background:rgba(15,23,42,1);
+      border:1px solid rgba(55,65,81,.7);
+      border-radius:14px;
+      transition:.18s ease;
+    }
+    .file-item:hover{
+      border-color:#60a5fa;
+      transform:translateY(-2px);
+      box-shadow:0 10px 22px rgba(56,189,248,.45);
+    }
+
+    .file-title{
+      font-size:.92rem;
+      font-weight:700;
+      margin-bottom:4px;
+      display:flex;
+      align-items:center;
+      gap:6px;
+    }
+    .file-note{
+      font-size:.82rem;
+      color:#a1a1aa;
+      margin-bottom:8px;
+    }
+
+    a.btn{
+      padding:7px 14px;
+      border-radius:999px;
+      font-size:.82rem;
+      text-decoration:none;
+      display:inline-flex;
+      align-items:center;
+      gap:6px;
+      border:1px solid transparent;
+      transition:.18s ease;
+    }
+    .btn-primary{
+      background:#2563eb;
+      color:#fff;
+      box-shadow:0 8px 20px rgba(37,99,235,.5);
+    }
+    .btn-primary:hover{
+      transform:translateY(-1px);
+      box-shadow:0 10px 25px rgba(37,99,235,.65);
+    }
+    .btn-outline{
+      background:transparent;
+      border-color:#4b5563;
+      color:#e5e7eb;
+    }
+    .btn-outline:hover{
+      transform:translateY(-1px);
+      border-color:#9ca3af;
+    }
+
+  </style>
+</head>
+
+<body>
+  <main class="card">
+
+    <!-- LOGO -->
+    <div class="logo">KACE</div>
+
+    <!-- HIỆU ỨNG GÕ CHỮ -->
+    <div id="typewriter"></div><span class="cursor"></span>
+
+    <p class="subtitle">Kho chia sẻ nhanh – Lưu trữ tạm thời dành cho mọi người.</p>
+
+    <!-- DANH SÁCH FILE -->
+    <section class="buttons">
+
+      <!-- FILE ẢNH -->
+      <div class="file-item">
+        <div class="file-title">🧠 Ảnh sơ đồ tư duy</div>
+        <p class="file-note">Ảnh sơ đồ tư duy chất lượng cao, giúp ghi nhớ nội dung nhanh chóng.</p>
+        <a class="btn btn-primary"
+           href="https://sf-static.upanhlaylink.com/img/image_20251203a920be0c3319ef59031815c7d515db8a.jpg"
+           target="_blank">
+          ⬇ Tải ảnh
+        </a>
+      </div>
+
+      <!-- FILE POWERPOINT -->
+      <div class="file-item">
+        <div class="file-title">📊 File trình chiếu PowerPoint</div>
+        <p class="file-note">Slide Tràng An có kèm sơ đồ tư duy, phù hợp thuyết trình hoặc chỉnh sửa lại.</p>
+        <a class="btn btn-outline"
+           href="https://www.mediafire.com/file/bdu4748ovxypvjp/T%25E1%25BA%25A1o_b%25C3%25A0i_tr%25C3%25ACnh_chi%25E1%25BA%25BFu_v%25C3%25A0_s%25C6%25A1_%25C4%2591%25E1%25BB%2593_t%25C6%25B0_duy_v%25E1%25BB%2581_Tr%25C3%25A0ng_An.pptx/file"
+           target="_blank">
+          📥 Mở / Tải file
+        </a>
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- SCRIPT GÕ CHỮ -->
+  <script>
+    const text = 
+`Hệ thống đang khởi tạo...
+Tải dữ liệu thành công ✓
+Chào mừng bạn đến với trung tâm lưu trữ KACE.`;
+
+    let i = 0;
+    const speed = 28;
+    function typeWriter(){
+      if(i < text.length){
+        document.getElementById("typewriter").innerHTML += text.charAt(i);
+        i++;
+        setTimeout(typeWriter, speed);
+      }
+    }
+    window.onload = typeWriter;
+  </script>
+
+</body>
+</html>
